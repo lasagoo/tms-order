@@ -1,9 +1,7 @@
-package com.linkinsense.tmsorder.infrastrucure.db.converter;
+package com.linkinsense.tmsorder.infrastructure.db.converter;
 
-import com.linkinsense.tmsorder.domain.aggregate.client.Client;
 import com.linkinsense.tmsorder.domain.aggregate.task.TransTask;
-import com.linkinsense.tmsorder.infrastrucure.db.dataobject.ClientDO;
-import com.linkinsense.tmsorder.infrastrucure.db.dataobject.TransTaskDO;
+import com.linkinsense.tmsorder.infrastructure.db.dataobject.TransTaskDO;
 import org.springframework.stereotype.Component;
 
 @Component

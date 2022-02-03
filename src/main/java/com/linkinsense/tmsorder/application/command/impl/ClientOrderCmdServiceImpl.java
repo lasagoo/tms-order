@@ -10,6 +10,8 @@ import com.linkinsense.tmsorder.application.result.Result;
 import com.linkinsense.tmsorder.domain.aggregate.client.ClientRepository;
 import com.linkinsense.tmsorder.domain.aggregate.order.ClientOrder;
 import com.linkinsense.tmsorder.domain.aggregate.order.ClientOrderRepository;
+import com.linkinsense.tmsorder.domain.aggregate.task.TransTask;
+import com.linkinsense.tmsorder.domain.aggregate.task.TransTaskPlanEvent;
 import com.linkinsense.tmsorder.domain.aggregate.task.TransTaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -65,4 +67,15 @@ public class ClientOrderCmdServiceImpl implements ClientOrderCmdService {
     }
 
 
+
+    @Override
+    public void handleTransTaskPlanEvent(TransTaskPlanEvent transTaskPlanEvent) {
+        ClientOrder clientOrder = clientOrderRepository.find(transTaskPlanEvent.getTransTask().getOrderId());
+        if(clientOrder == null){
+            throw new IllegalArgumentException("Invalid order id:" + transTaskPlanEvent.getTransTask().getOrderId());
+        }
+        clientOrder.setScheduledStatus();
+        clientOrderRepository.update(clientOrder);
+        return;
+    }
 }

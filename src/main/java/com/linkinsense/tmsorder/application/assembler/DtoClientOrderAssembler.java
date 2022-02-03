@@ -6,12 +6,15 @@ import com.linkinsense.tmsorder.domain.aggregate.client.Client;
 import com.linkinsense.tmsorder.domain.aggregate.client.ClientRepository;
 import com.linkinsense.tmsorder.domain.aggregate.order.ClientOrder;
 import com.linkinsense.tmsorder.domain.aggregate.order.ClientOrderRepository;
+import com.linkinsense.tmsorder.domain.aggregate.order.valueobject.OrderStatus;
 import com.linkinsense.tmsorder.domain.aggregate.task.TransTask;
+import com.linkinsense.tmsorder.domain.aggregate.task.valueobject.TransTaskStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
 
 @Component
 public class DtoClientOrderAssembler {
@@ -33,11 +36,13 @@ public class DtoClientOrderAssembler {
         List<TransTask> transTasks = clientOrderCreateCmd.getDetails().stream()
                         .map(e->dtoTransTaskAssembler.toEntity(e))
                         .collect(Collectors.toList());
+        transTasks.forEach(e->e.setStatus(TransTaskStatus.CREATED));
         ClientOrder clientOrder = new ClientOrder();
         clientOrder.setTasks(transTasks);
         clientOrder.setClient(client);
         clientOrder.setOrderCode(clientOrderCreateCmd.getOrderCode());
         clientOrder.setOrderDir(clientOrderCreateCmd.getOrderDir());
+        clientOrder.setStatus(OrderStatus.CREATED);
         return clientOrder;
     }
 

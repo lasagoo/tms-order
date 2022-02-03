@@ -1,6 +1,5 @@
-package com.linkinsense.tmsorder.infrastrucure.db.dataobject;
+package com.linkinsense.tmsorder.infrastructure.db.dataobject;
 
-import com.linkinsense.tmsorder.domain.aggregate.location.valueobject.Address;
 import lombok.Data;
 
 @Data

@@ -1,10 +1,10 @@
-package com.linkinsense.tmsorder.infrastrucure.db.repository;
+package com.linkinsense.tmsorder.infrastructure.db.repository;
 
 import com.linkinsense.tmsorder.domain.aggregate.client.Client;
 import com.linkinsense.tmsorder.domain.aggregate.client.ClientRepository;
-import com.linkinsense.tmsorder.infrastrucure.db.converter.ClientConverter;
-import com.linkinsense.tmsorder.infrastrucure.db.dataobject.ClientDO;
-import com.linkinsense.tmsorder.infrastrucure.db.mapper.ClientMapper;
+import com.linkinsense.tmsorder.infrastructure.db.converter.ClientConverter;
+import com.linkinsense.tmsorder.infrastructure.db.dataobject.ClientDO;
+import com.linkinsense.tmsorder.infrastructure.db.mapper.ClientMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

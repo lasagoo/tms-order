@@ -1,4 +1,4 @@
-package com.linkinsense.tmsorder.infrastrucure.db.repository;
+package com.linkinsense.tmsorder.infrastructure.db.repository;
 
 import com.linkinsense.tmsorder.domain.aggregate.location.Location;
 import com.linkinsense.tmsorder.domain.aggregate.location.LocationRepository;

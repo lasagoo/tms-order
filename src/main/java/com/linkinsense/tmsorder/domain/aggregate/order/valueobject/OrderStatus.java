@@ -1,10 +1,11 @@
 package com.linkinsense.tmsorder.domain.aggregate.order.valueobject;
 
+import com.linkinsense.tmsorder.domain.aggregate.task.valueobject.TransTaskStatus;
 import lombok.Data;
 
 public enum OrderStatus {
     CREATED("已创建"),
-    SPLIT("待计划"),
+    PLANING("待计划"),
     SCHEDULED("已计划"),
     ASSIGNED("已分配"),
     TRANSPORTING("运输中"),
@@ -21,5 +22,12 @@ public enum OrderStatus {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public OrderStatus nextStatus(){
+        if(this.equals(PLANING)){
+            return SCHEDULED;
+        }
+        return CREATED;
     }
 }

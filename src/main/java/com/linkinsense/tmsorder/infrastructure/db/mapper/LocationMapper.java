@@ -1,7 +1,6 @@
-package com.linkinsense.tmsorder.infrastrucure.db.mapper;
+package com.linkinsense.tmsorder.infrastructure.db.mapper;
 
-import com.linkinsense.tmsorder.infrastrucure.db.dataobject.LocationDO;
-import com.linkinsense.tmsorder.infrastrucure.db.dataobject.TransTaskDO;
+import com.linkinsense.tmsorder.infrastructure.db.dataobject.LocationDO;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

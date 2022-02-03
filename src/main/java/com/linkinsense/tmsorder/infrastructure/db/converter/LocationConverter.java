@@ -1,7 +1,7 @@
-package com.linkinsense.tmsorder.infrastrucure.db.converter;
+package com.linkinsense.tmsorder.infrastructure.db.converter;
 
 import com.linkinsense.tmsorder.domain.aggregate.location.Location;
-import com.linkinsense.tmsorder.infrastrucure.db.dataobject.LocationDO;
+import com.linkinsense.tmsorder.infrastructure.db.dataobject.LocationDO;
 import org.springframework.stereotype.Component;
 
 @Component

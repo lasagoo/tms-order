@@ -1,7 +1,6 @@
-package com.linkinsense.tmsorder.infrastrucure.db.mapper;
+package com.linkinsense.tmsorder.infrastructure.db.mapper;
 
-import com.linkinsense.tmsorder.infrastrucure.db.dataobject.ClientDO;
-import com.linkinsense.tmsorder.infrastrucure.db.dataobject.ClientOrderDO;
+import com.linkinsense.tmsorder.infrastructure.db.dataobject.ClientOrderDO;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

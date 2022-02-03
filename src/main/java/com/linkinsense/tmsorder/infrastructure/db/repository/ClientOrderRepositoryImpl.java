@@ -1,16 +1,15 @@
 
-package com.linkinsense.tmsorder.infrastrucure.db.repository;
+package com.linkinsense.tmsorder.infrastructure.db.repository;
 
 import com.linkinsense.tmsorder.domain.aggregate.order.ClientOrder;
 import com.linkinsense.tmsorder.domain.aggregate.order.ClientOrderRepository;
 import com.linkinsense.tmsorder.domain.aggregate.task.TransTask;
-import com.linkinsense.tmsorder.infrastrucure.db.converter.ClientOrderConverter;
-import com.linkinsense.tmsorder.infrastrucure.db.converter.TransTaskConverter;
-import com.linkinsense.tmsorder.infrastrucure.db.dataobject.ClientOrderDO;
-import com.linkinsense.tmsorder.infrastrucure.db.dataobject.TransTaskDO;
-import com.linkinsense.tmsorder.infrastrucure.db.mapper.ClientMapper;
-import com.linkinsense.tmsorder.infrastrucure.db.mapper.ClientOrderMapper;
-import com.linkinsense.tmsorder.infrastrucure.db.mapper.TransTaskMapper;
+import com.linkinsense.tmsorder.infrastructure.db.converter.ClientOrderConverter;
+import com.linkinsense.tmsorder.infrastructure.db.converter.TransTaskConverter;
+import com.linkinsense.tmsorder.infrastructure.db.dataobject.ClientOrderDO;
+import com.linkinsense.tmsorder.infrastructure.db.dataobject.TransTaskDO;
+import com.linkinsense.tmsorder.infrastructure.db.mapper.ClientOrderMapper;
+import com.linkinsense.tmsorder.infrastructure.db.mapper.TransTaskMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -72,6 +71,6 @@ public class ClientOrderRepositoryImpl implements ClientOrderRepository {
     @Override
     public void update(ClientOrder clientOrder) {
         ClientOrderDO clientOrderDO = clientOrderConverter.serialize(clientOrder);
-        clientOrderMapper
+        clientOrderMapper.update(clientOrderDO);
     }
 }

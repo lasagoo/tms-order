@@ -1,4 +1,4 @@
-package com.linkinsense.tmsorder.infrastrucure.db.repository;
+package com.linkinsense.tmsorder.infrastructure.db.repository;
 
 import com.linkinsense.tmsorder.domain.aggregate.task.TransTask;
 import com.linkinsense.tmsorder.domain.aggregate.task.TransTaskRepository;
@@ -14,6 +14,11 @@ public class TransTaskRepositoryImpl implements TransTaskRepository {
 
     @Override
     public void save(TransTask transTask) {
+
+    }
+
+    @Override
+    public void update(TransTask transTask) {
 
     }
 }

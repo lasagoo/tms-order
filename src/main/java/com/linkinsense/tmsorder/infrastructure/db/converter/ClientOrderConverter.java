@@ -1,7 +1,7 @@
-package com.linkinsense.tmsorder.infrastrucure.db.converter;
+package com.linkinsense.tmsorder.infrastructure.db.converter;
 
 import com.linkinsense.tmsorder.domain.aggregate.order.ClientOrder;
-import com.linkinsense.tmsorder.infrastrucure.db.dataobject.ClientOrderDO;
+import com.linkinsense.tmsorder.infrastructure.db.dataobject.ClientOrderDO;
 import org.springframework.stereotype.Component;
 
 @Component
