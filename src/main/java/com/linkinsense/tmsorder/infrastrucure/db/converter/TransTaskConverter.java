@@ -20,6 +20,6 @@ public class TransTaskConverter {
     }
     public TransTask deserialize(TransTaskDO transTaskDO){
 
-        return null;
+        return new TransTask();
     }
 }

@@ -1,6 +1,9 @@
 package com.linkinsense.tmsorder.infrastrucure.db.dataobject;
 
 
+import lombok.Data;
+
+@Data
 public class ClientOrderDO {
     private Long id;
     private String orderCode;

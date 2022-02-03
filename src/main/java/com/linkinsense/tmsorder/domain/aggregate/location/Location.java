@@ -7,6 +7,7 @@ import lombok.Data;
 @Data
 public class Location {
     private Long id;
+    private String code;
     private String name;
     private Client client;
     private Address address;

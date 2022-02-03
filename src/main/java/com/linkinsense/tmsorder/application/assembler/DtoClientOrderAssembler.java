@@ -1,6 +1,7 @@
 package com.linkinsense.tmsorder.application.assembler;
 
-import com.linkinsense.tmsorder.application.command.cmd.CreateClientOrderCommand;
+import com.linkinsense.tmsorder.application.command.cmd.ClientOrderCreateCmd;
+import com.linkinsense.tmsorder.application.command.cmd.ClientOrderUpdateCmd;
 import com.linkinsense.tmsorder.domain.aggregate.client.Client;
 import com.linkinsense.tmsorder.domain.aggregate.client.ClientRepository;
 import com.linkinsense.tmsorder.domain.aggregate.order.ClientOrder;
@@ -22,20 +23,35 @@ public class DtoClientOrderAssembler {
     @Autowired
     private DtoTransTaskAssembler dtoTransTaskAssembler;
 
-    public ClientOrder toEntity(CreateClientOrderCommand createClientOrderCommand){
-        Client client = clientRepository.find(createClientOrderCommand.getClientId());
+
+    public ClientOrder toEntity(ClientOrderCreateCmd clientOrderCreateCmd){
+        Client client = clientRepository.find(clientOrderCreateCmd.getClientId());
         if(client == null){
             throw new IllegalArgumentException("clientId " +
-                    createClientOrderCommand.getClientId() + " not exist");
+                    clientOrderCreateCmd.getClientId() + " not exist");
         }
-        List<TransTask> transTasks = createClientOrderCommand.getDetails().stream()
+        List<TransTask> transTasks = clientOrderCreateCmd.getDetails().stream()
                         .map(e->dtoTransTaskAssembler.toEntity(e))
                         .collect(Collectors.toList());
         ClientOrder clientOrder = new ClientOrder();
         clientOrder.setTasks(transTasks);
         clientOrder.setClient(client);
-        clientOrder.setOrderCode(createClientOrderCommand.getOrderCode());
-        clientOrder.setOrderDir(createClientOrderCommand.getOrderDir());
+        clientOrder.setOrderCode(clientOrderCreateCmd.getOrderCode());
+        clientOrder.setOrderDir(clientOrderCreateCmd.getOrderDir());
+        return clientOrder;
+    }
+
+    public ClientOrder toEntity(ClientOrderUpdateCmd clientOrderUpdateCmd){
+        Client client = clientRepository.find(clientOrderUpdateCmd.getClientId());
+        if(client == null){
+            throw new IllegalArgumentException("clientId " +
+                    clientOrderUpdateCmd.getClientId() + " not exist");
+        }
+        ClientOrder clientOrder = new ClientOrder();
+        clientOrder.setClient(client);
+        clientOrder.setId(clientOrderUpdateCmd.getOrderId());
+        clientOrder.setOrderCode(clientOrderUpdateCmd.getOrderCode());
+        clientOrder.setOrderDir(clientOrderUpdateCmd.getOrderDir());
         return clientOrder;
     }
 }

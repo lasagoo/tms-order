@@ -11,4 +11,7 @@ public class LocationConverter {
         return new LocationDO();
     }
 
+    public Location deserialize(LocationDO locationDO){
+        return new Location();
+    }
 }

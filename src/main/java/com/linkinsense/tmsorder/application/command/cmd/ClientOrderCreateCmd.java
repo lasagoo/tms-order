@@ -7,7 +7,7 @@ import javax.validation.constraints.Null;
 import java.util.List;
 
 @Data
-public class CreateClientOrderCommand {
+public class ClientOrderCreateCmd {
 
     @NotNull(message = "客户ID不能为空")
     private Long clientId;

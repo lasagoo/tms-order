@@ -14,10 +14,13 @@ public class ClientRepositoryImpl implements ClientRepository {
     @Autowired
     private ClientMapper clientMapper;
 
+    @Autowired
+    private ClientConverter clientConverter;
+
     @Override
     public Client find(Long id) {
         ClientDO clientDO =clientMapper.select(id);
-        Client client = ClientConverter.deserialize(clientDO);
+        Client client = clientConverter.deserialize(clientDO);
         return client;
     }
 
@@ -25,6 +28,8 @@ public class ClientRepositoryImpl implements ClientRepository {
     public void save(Client client) {
 
     }
+
+
 
     @Override
     public void remove(Long id) {

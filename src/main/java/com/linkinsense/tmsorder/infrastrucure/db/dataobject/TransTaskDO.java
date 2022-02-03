@@ -7,6 +7,7 @@ import java.util.Date;
 @Data
 public class TransTaskDO {
     private Long id;
+    private Long orderId;
     private long loadingLocationId;
     private long unloadingLocationId;
     private Date loadingDate;
