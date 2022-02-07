@@ -1,4 +1,6 @@
-package com.linkinsense.tmsorder.domain.aggregate.task;
+package com.linkinsense.tmsorder.domain.aggregate.order;
+
+import com.linkinsense.tmsorder.domain.aggregate.order.TransTask;
 
 public interface TransTaskRepository {
     TransTask find(Long id);

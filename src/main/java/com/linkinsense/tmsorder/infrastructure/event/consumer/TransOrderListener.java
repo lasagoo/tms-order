@@ -4,13 +4,14 @@ import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 import com.linkinsense.tmsorder.application.command.ClientOrderCmdService;
 import com.linkinsense.tmsorder.domain.aggregate.order.TransTaskPlanEvent;
+import com.linkinsense.tmsorder.domain.aggregate.transport.TransOrderCreateEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
 @Component
-public class TransTaskListener {
+public class TransOrderListener {
     @Autowired
     private ClientOrderCmdService clientOrderCmdService;
     @Autowired
@@ -21,7 +22,7 @@ public class TransTaskListener {
         eventBus.register(this);
     }
     @Subscribe
-    public void handlePlaningEvent(TransTaskPlanEvent transTaskPlanEvent){
-        clientOrderCmdService.handleTransTaskPlanEvent(transTaskPlanEvent);
+    public void handlePlaningEvent(TransOrderCreateEvent transOrderCreateEvent){
+        clientOrderCmdService.handleTransOrderCreateEvent(transOrderCreateEvent);
     }
 }

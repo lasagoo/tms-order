@@ -3,5 +3,6 @@ package com.linkinsense.tmsorder.application.command;
 import com.linkinsense.tmsorder.application.result.Result;
 
 public interface TransTaskCmdService {
-    public <T> Result<T> planTransTask(Long transTaskId);
+    //生成任务单
+    public <T> Result<T> genTransTask(Long orderId, Long transTaskId);
 }

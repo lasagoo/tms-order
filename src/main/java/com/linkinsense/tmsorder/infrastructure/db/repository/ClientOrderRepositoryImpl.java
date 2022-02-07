@@ -3,7 +3,7 @@ package com.linkinsense.tmsorder.infrastructure.db.repository;
 
 import com.linkinsense.tmsorder.domain.aggregate.order.ClientOrder;
 import com.linkinsense.tmsorder.domain.aggregate.order.ClientOrderRepository;
-import com.linkinsense.tmsorder.domain.aggregate.task.TransTask;
+import com.linkinsense.tmsorder.domain.aggregate.order.TransTask;
 import com.linkinsense.tmsorder.infrastructure.db.converter.ClientOrderConverter;
 import com.linkinsense.tmsorder.infrastructure.db.converter.TransTaskConverter;
 import com.linkinsense.tmsorder.infrastructure.db.dataobject.ClientOrderDO;
@@ -31,6 +31,11 @@ public class ClientOrderRepositoryImpl implements ClientOrderRepository {
     @Autowired
     private ClientOrderConverter clientOrderConverter;
 
+    /**
+     * 多表联合查询放在仓库层是否合适？
+     * @param id
+     * @return
+     */
     @Override
     public ClientOrder find(Long id) {
         ClientOrderDO clientOrderDO = clientOrderMapper.select(id);

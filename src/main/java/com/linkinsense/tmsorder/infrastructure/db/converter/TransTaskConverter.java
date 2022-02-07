@@ -1,6 +1,6 @@
 package com.linkinsense.tmsorder.infrastructure.db.converter;
 
-import com.linkinsense.tmsorder.domain.aggregate.task.TransTask;
+import com.linkinsense.tmsorder.domain.aggregate.order.TransTask;
 import com.linkinsense.tmsorder.infrastructure.db.dataobject.TransTaskDO;
 import org.springframework.stereotype.Component;
 

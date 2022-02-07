@@ -1,7 +1,7 @@
-package com.linkinsense.tmsorder.domain.aggregate.task;
+package com.linkinsense.tmsorder.domain.aggregate.order;
 
 import com.linkinsense.tmsorder.domain.aggregate.location.Location;
-import com.linkinsense.tmsorder.domain.aggregate.task.valueobject.TransTaskStatus;
+import com.linkinsense.tmsorder.domain.aggregate.order.valueobject.TransTaskStatus;
 import lombok.Data;
 
 import java.util.Date;
@@ -15,5 +15,4 @@ public class TransTask {
     private Date loadingDate;
     private Date arriveDate;
     private TransTaskStatus status;
-
 }

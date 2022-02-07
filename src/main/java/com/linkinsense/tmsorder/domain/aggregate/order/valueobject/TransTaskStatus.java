@@ -1,8 +1,8 @@
-package com.linkinsense.tmsorder.domain.aggregate.task.valueobject;
+package com.linkinsense.tmsorder.domain.aggregate.order.valueobject;
 
 public enum TransTaskStatus {
     CREATED("已创建"),
-    PLANING("待计划"),
+    PREPARED("待计划"),
     SCHEDULED("已计划"),
     ASSIGNED("已分配"),
     EXPORTED("已出库"),
@@ -25,10 +25,5 @@ public enum TransTaskStatus {
     }
 
 
-    public TransTaskStatus nextStatus(){
-        if(this.equals(PLANING)){
-            return SCHEDULED;
-        }
-        return CREATED;
-    }
+
 }

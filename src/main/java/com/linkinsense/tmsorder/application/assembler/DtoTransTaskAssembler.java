@@ -3,12 +3,11 @@ package com.linkinsense.tmsorder.application.assembler;
 import com.linkinsense.tmsorder.application.command.pojo.ClientOrderDetailPojo;
 import com.linkinsense.tmsorder.domain.aggregate.location.Location;
 import com.linkinsense.tmsorder.domain.aggregate.location.LocationRepository;
-import com.linkinsense.tmsorder.domain.aggregate.task.TransTask;
+import com.linkinsense.tmsorder.domain.aggregate.order.TransTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotNull;
-import java.util.function.Function;
 
 @Component
 public class DtoTransTaskAssembler {

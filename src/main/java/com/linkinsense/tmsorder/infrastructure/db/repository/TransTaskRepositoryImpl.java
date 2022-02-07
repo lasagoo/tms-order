@@ -1,7 +1,7 @@
 package com.linkinsense.tmsorder.infrastructure.db.repository;
 
-import com.linkinsense.tmsorder.domain.aggregate.task.TransTask;
-import com.linkinsense.tmsorder.domain.aggregate.task.TransTaskRepository;
+import com.linkinsense.tmsorder.domain.aggregate.order.TransTask;
+import com.linkinsense.tmsorder.domain.aggregate.order.TransTaskRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository

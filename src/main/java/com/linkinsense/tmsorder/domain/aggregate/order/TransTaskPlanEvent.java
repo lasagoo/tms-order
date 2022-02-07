@@ -1,4 +1,4 @@
-package com.linkinsense.tmsorder.domain.aggregate.task;
+package com.linkinsense.tmsorder.domain.aggregate.order;
 
 public class TransTaskPlanEvent {
     private TransTask transTask;
